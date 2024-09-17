@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Group-Id: io.jenkins.plugins
+Artifact-Id: api-plugin
+Short-Name: api-plugin
+Long-Name: API Management Plugin
+Plugin-Version: 1.0
+Hudson-Version: 2.470
+Jenkins-Version: 2.470
+Plugin-Dependencies: structs:338.v848422169819
+Plugin-Developers: 
+Plugin-ScmConnection: scm:git:https://github.com/jenkinsci/plugin-pom.gi
+ t/api-plugin
+Plugin-ScmTag: plugin-4.85
+Plugin-ScmUrl: https://github.com/jenkinsci/plugin-pom/api-plugin
+Libraries: D:\JenkinsPlugin\api-plugin\src\main\resources,D:\JenkinsPlug
+ in\api-plugin\target\classes,C:\Users\YT-Prakash\.m2\repository\commons
+ -io\commons-io\2.16.1\commons-io-2.16.1.jar,C:\Users\YT-Prakash\.m2\rep
+ ository\org\apache\httpcomponents\client5\httpclient5\5.3.1\httpclient5
+ -5.3.1.jar,C:\Users\YT-Prakash\.m2\repository\org\apache\httpcomponents
+ \core5\httpcore5-h2\5.2.4\httpcore5-h2-5.2.4.jar,C:\Users\YT-Prakash\.m
+ 2\repository\org\apache\httpcomponents\core5\httpcore5\5.2.4\httpcore5-
+ 5.2.4.jar,C:\Users\YT-Prakash\.m2\repository\org\json\json\20240303\jso
+ n-20240303.jar,C:\Users\YT-Prakash\.m2\repository\org\slf4j\slf4j-api\2
+ .0.13\slf4j-api-2.0.13.jar
+Resource-Path: D:\JenkinsPlugin\api-plugin\src\main\webapp
+

@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 21
+Specification-Title: API Management Plugin
+Specification-Version: 1.0
+Implementation-Title: API Management Plugin
+Implementation-Version: 1.0
+Group-Id: io.jenkins.plugins
+Artifact-Id: api-plugin
+Short-Name: api-plugin
+Long-Name: API Management Plugin
+Plugin-Version: 1.0
+Hudson-Version: 2.470
+Jenkins-Version: 2.470
+Plugin-Dependencies: structs:338.v848422169819
+Plugin-Developers: 
+Plugin-ScmConnection: scm:git:https://github.com/jenkinsci/plugin-pom.gi
+ t/api-plugin
+Plugin-ScmTag: plugin-4.85
+Plugin-ScmUrl: https://github.com/jenkinsci/plugin-pom/api-plugin
+
