@@ -9,11 +9,11 @@ public class InjectedTest extends junit.framework.TestCase {
   public static junit.framework.Test suite() throws Exception {
     System.out.println("Running tests for "+"io.jenkins.plugins:api-plugin:1.0");
     Map<String, Object> parameters = new HashMap<String, Object>();
-    parameters.put("basedir","D:\\JenkinsPlugin\\api-plugin");
+    parameters.put("basedir","C:\\Users\\YT-Prakash\\git\\testwheel-trigger");
     parameters.put("artifactId","api-plugin");
     parameters.put("packaging","hpi");
-    parameters.put("outputDirectory","D:\\JenkinsPlugin\\api-plugin\\target\\classes");
-    parameters.put("testOutputDirectory","D:\\JenkinsPlugin\\api-plugin\\target\\test-classes");
+    parameters.put("outputDirectory","C:\\Users\\YT-Prakash\\git\\testwheel-trigger\\target\\classes");
+    parameters.put("testOutputDirectory","C:\\Users\\YT-Prakash\\git\\testwheel-trigger\\target\\test-classes");
     parameters.put("requirePI","true");
     return org.jvnet.hudson.test.PluginAutomaticTestBuilder.build(parameters);
   }

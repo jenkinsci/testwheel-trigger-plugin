@@ -1,6 +1,6 @@
 <factorypath>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/main/jenkins-core/2.469/jenkins-core-2.469.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/main/cli/2.469/cli-2.469.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/main/jenkins-core/2.470/jenkins-core-2.470.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/main/cli/2.470/cli-2.470.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/main/remoting/3256.v88a_f6e922152/remoting-3256.v88a_f6e922152.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/args4j/args4j/2.33/args4j-2.33.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/github/spotbugs/spotbugs-annotations/4.8.6/spotbugs-annotations-4.8.6.jar" enabled="true" runInBatchMode="false"/>
@@ -47,7 +47,7 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/symbol-annotation/1.24/symbol-annotation-1.24.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/task-reactor/1.8/task-reactor-1.8.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/version-number/1.11/version-number-1.11.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/main/websocket-spi/2.469/websocket-spi-2.469.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/main/websocket-spi/2.470/websocket-spi-2.470.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jfree/jcommon/1.0.23/jcommon-1.0.23.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jvnet/hudson/commons-jelly-tags-define/1.1-jenkins-20240510/commons-jelly-tags-define-1.1-jenkins-20240510.jar" enabled="true" runInBatchMode="false"/>
@@ -60,14 +60,14 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/kohsuke/jinterop/j-interopdeps/2.0.8-kohsuke-1/j-interopdeps-2.0.8-kohsuke-1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/samba/jcifs/jcifs/1.3.18-kohsuke-1/jcifs-1.3.18-kohsuke-1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/kohsuke/stapler/json-lib/2.4-jenkins-7/json-lib-2.4-jenkins-7.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/kohsuke/stapler/stapler/1881.vd39f3ee5c629/stapler-1881.vd39f3ee5c629.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/kohsuke/stapler/stapler/1892.v73465f3d074d/stapler-1892.v73465f3d074d.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/commons-discovery/commons-discovery/0.5/commons-discovery-0.5.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jvnet/tiger-types/2.2/tiger-types-2.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/kohsuke/stapler/stapler-adjunct-codemirror/1.3/stapler-adjunct-codemirror-1.3.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/kohsuke/stapler/stapler-groovy/1881.vd39f3ee5c629/stapler-groovy-1881.vd39f3ee5c629.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/kohsuke/stapler/stapler-jelly/1881.vd39f3ee5c629/stapler-jelly-1881.vd39f3ee5c629.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/kohsuke/stapler/stapler-groovy/1892.v73465f3d074d/stapler-groovy-1892.v73465f3d074d.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/kohsuke/stapler/stapler-jelly/1892.v73465f3d074d/stapler-jelly-1892.v73465f3d074d.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/dom4j/dom4j/2.1.4/dom4j-2.1.4.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/jenkins-ci/commons-jelly/1.1-jenkins-20240510/commons-jelly-1.1-jenkins-20240510.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/slf4j/jcl-over-slf4j/2.0.13/jcl-over-slf4j-2.0.13.jar" enabled="true" runInBatchMode="false"/>
