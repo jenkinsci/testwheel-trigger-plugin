@@ -34,6 +34,11 @@
 	</dependencyManagement>
 	<dependencies>
 		<dependency>
+			<groupId>org.jenkins-ci.main</groupId>
+			<artifactId>jenkins-core</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.jenkins-ci.plugins.workflow</groupId>
 			<artifactId>workflow-basic-steps</artifactId>
 			<scope>test</scope>
@@ -85,8 +90,9 @@
 				<artifactId>maven-hpi-plugin</artifactId>
 				<version>3.9</version><!--$NO-MVN-MAN-VER$-->
 				<configuration>
-                    <minimumJavaVersion>11</minimumJavaVersion> <!-- Specify minimum Java version -->
-                </configuration>
+					<minimumJavaVersion>11</minimumJavaVersion> <!-- Specify
+					minimum Java version -->
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

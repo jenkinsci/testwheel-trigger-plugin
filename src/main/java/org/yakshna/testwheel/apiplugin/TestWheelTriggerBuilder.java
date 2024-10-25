@@ -1,9 +1,8 @@
 package org.yakshna.testwheel.apiplugin;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.classic.methods.HttpUriRequestBase;
@@ -71,8 +70,8 @@ public class TestWheelTriggerBuilder extends Builder implements SimpleBuildStep 
 										HttpUriRequestBase reportRequest = new HttpGet(reportUrl);
 										try (CloseableHttpResponse reportResponse = client.execute(reportRequest);
 												InputStream reportStream = reportResponse.getEntity().getContent()) {
-											File reportFile = new File(workspace.getRemote(), "report.pdf");
-											try (FileOutputStream fos = new FileOutputStream(reportFile)) {
+											FilePath reportFilePath = workspace.child("report.pdf");
+											try (OutputStream fos = reportFilePath.write()) {
 												byte[] buffer = new byte[1024];
 												int len;
 												while ((len = reportStream.read(buffer)) != -1) {
@@ -80,7 +79,7 @@ public class TestWheelTriggerBuilder extends Builder implements SimpleBuildStep 
 												}
 											}
 											listener.getLogger().println(
-													"Report downloaded successfully: " + reportFile.getAbsolutePath());
+													"Report downloaded successfully: " + reportFilePath.getRemote());
 											run.setResult(Result.SUCCESS);
 											return;
 										}
@@ -123,7 +122,7 @@ public class TestWheelTriggerBuilder extends Builder implements SimpleBuildStep 
 	}
 
 	@Extension
-	@Symbol("apiCallBuilder")
+	@Symbol("testwheelTriggerBuilder")
 	public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
 
 		@SuppressWarnings("rawtypes")
@@ -134,7 +133,7 @@ public class TestWheelTriggerBuilder extends Builder implements SimpleBuildStep 
 
 		@Override
 		public String getDisplayName() {
-			return "APICallBuilder";
+			return "TestwheelTriggerBuilder";
 		}
 	}
 }
