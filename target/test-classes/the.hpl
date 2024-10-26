@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Group-Id: io.jenkins.plugins
+Short-Name: testwheel-trigger
+Long-Name: TestWheel Automation Plugin
+Minimum-Java-Version: 11
+Plugin-Version: 1.0
+Hudson-Version: 2.361
+Jenkins-Version: 2.361
+Plugin-Dependencies: apache-httpcomponents-client-5-api:5.4-118.v19911
+ 5451c4d,json-api:20240303-41.v94e11e6de726
+Plugin-Developers: 
+Support-Dynamic-Loading: true
+Plugin-ScmUrl: https://github.com/Yakshna-Corporation/testwheel-trigger
+Libraries: C:\Users\YT-Prakash\git\testwheel-trigger\src\main\resource
+ s,C:\Users\YT-Prakash\git\testwheel-trigger\target\classes
+Resource-Path: C:\Users\YT-Prakash\git\testwheel-trigger\src\main\webapp
+
