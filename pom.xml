@@ -21,6 +21,14 @@
 		<maven.test.skip>true</maven.test.skip>
 		<maven.compiler.release>11</maven.compiler.release>
 	</properties>
+	<licenses>
+		<license>
+			<name>Apache-2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+		</licenses>
 	<scm>
 		<connection>
 			scm:git:https://github.com/Yakshna-Corporation/testwheel-trigger.git</connection>
