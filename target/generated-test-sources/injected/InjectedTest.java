@@ -6,10 +6,10 @@ import java.util.*;
  */
 public class InjectedTest extends junit.framework.TestCase {
   public static junit.framework.Test suite() throws Exception {
-    System.out.println("Running tests for "+"io.jenkins.plugins:testwheel-trigger:1.0");
+    System.out.println("Running tests for "+"io.jenkins.plugins:testwheel-api:1.0");
     Map<String, Object> parameters = new HashMap<String, Object>();
     parameters.put("basedir","C:\\Users\\YT-Prakash\\git\\testwheel-trigger");
-    parameters.put("artifactId","testwheel-trigger");
+    parameters.put("artifactId","testwheel-api");
     parameters.put("packaging","hpi");
     parameters.put("outputDirectory","C:\\Users\\YT-Prakash\\git\\testwheel-trigger\\target\\classes");
     parameters.put("testOutputDirectory","C:\\Users\\YT-Prakash\\git\\testwheel-trigger\\target\\test-classes");
