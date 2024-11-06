@@ -9,7 +9,7 @@
 		<relativePath />
 	</parent>
 	<groupId>io.jenkins.plugins</groupId>
-	<artifactId>testwheel-api-plugin</artifactId>
+	<artifactId>testwheel-api</artifactId>
 	<version>${revision}</version>
 	<packaging>hpi</packaging>
 	<name>TestWheel Automation Plugin</name>
