@@ -9,17 +9,14 @@
 		<relativePath />
 	</parent>
 	<groupId>io.jenkins.plugins</groupId>
-	<artifactId>testwheel-api</artifactId>
+	<artifactId>testwheel-trigger</artifactId>
 	<version>${revision}</version>
 	<packaging>hpi</packaging>
 	<name>TestWheel Automation Plugin</name>
 	<properties>
 		<revision>1.0</revision>
-		<java.level>11</java.level>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
 		<maven.test.skip>true</maven.test.skip>
-		<maven.compiler.release>11</maven.compiler.release>
+		<jenkins.version>2.452.4</jenkins.version>
 	</properties>
 	<licenses>
 		<license>
@@ -28,7 +25,7 @@
 			<distribution>repo</distribution>
 			<comments>A business-friendly OSS license</comments>
 		</license>
-		</licenses>
+	</licenses>
 	<scm>
 		<connection>
 			scm:git:https://github.com/Yakshna-Corporation/testwheel-trigger.git</connection>
@@ -41,39 +38,14 @@
 		<dependencies>
 			<dependency>
 				<groupId>io.jenkins.tools.bom</groupId>
-				<artifactId>bom-2.479.x</artifactId>
-				<version>3482.vc10d4f6da_28a_</version>
+				<artifactId>bom-2.452.x</artifactId>
+				<version>3761.vd922730f0fd2</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<dependencies>
-		<dependency>
-			<groupId>org.jenkins-ci.main</groupId>
-			<artifactId>jenkins-core</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jenkins-ci.plugins.workflow</groupId>
-			<artifactId>workflow-basic-steps</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jenkins-ci.plugins.workflow</groupId>
-			<artifactId>workflow-cps</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jenkins-ci.plugins.workflow</groupId>
-			<artifactId>workflow-durable-task-step</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jenkins-ci.plugins.workflow</groupId>
-			<artifactId>workflow-job</artifactId>
-			<scope>test</scope>
-		</dependency>
 		<dependency>
 			<groupId>io.jenkins.plugins</groupId>
 			<artifactId>apache-httpcomponents-client-5-api</artifactId>
@@ -99,17 +71,4 @@
 			<url>https://repo.jenkins-ci.org/public/</url>
 		</pluginRepository>
 	</pluginRepositories>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.jenkins-ci.tools</groupId>
-				<artifactId>maven-hpi-plugin</artifactId>
-				<version>3.9</version><!--$NO-MVN-MAN-VER$-->
-				<configuration>
-					<minimumJavaVersion>11</minimumJavaVersion> <!-- Specify
-					minimum Java version -->
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>

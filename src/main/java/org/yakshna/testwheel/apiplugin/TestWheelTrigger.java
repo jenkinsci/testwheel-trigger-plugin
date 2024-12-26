@@ -28,14 +28,14 @@ import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Builder;
 import jenkins.tasks.SimpleBuildStep;
 
-public class TestWheelTriggerBuilder extends Builder implements SimpleBuildStep {
+public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 
 	private final String apiUrl;
 	
 	static final String STATUS = "status";
 
 	@DataBoundConstructor
-	public TestWheelTriggerBuilder(String apiUrl) {
+	public TestWheelTrigger(String apiUrl) {
 		this.apiUrl = apiUrl;
 	}
 
@@ -122,7 +122,7 @@ public class TestWheelTriggerBuilder extends Builder implements SimpleBuildStep 
 	}
 
 	@Extension
-	@Symbol("testwheelTriggerBuilder")
+	@Symbol("testwheelTrigger")
 	public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
 
 		@SuppressWarnings("rawtypes")
@@ -133,7 +133,7 @@ public class TestWheelTriggerBuilder extends Builder implements SimpleBuildStep 
 
 		@Override
 		public String getDisplayName() {
-			return "TestwheelTriggerBuilder";
+			return "TestwheelTrigger";
 		}
 	}
 }
