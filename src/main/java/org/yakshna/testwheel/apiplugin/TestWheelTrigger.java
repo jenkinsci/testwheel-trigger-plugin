@@ -33,7 +33,7 @@ public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 	private final String apiKey;
 	private final String prjctKey;
 	
-	private String url = "http://localhost/testwheel/test-appln";
+	private String url = "https://app.testwheel.com/test-appln";
 	
 	static final String STATUS = "status";
 
