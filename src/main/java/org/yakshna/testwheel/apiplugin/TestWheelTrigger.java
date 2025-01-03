@@ -30,17 +30,25 @@ import jenkins.tasks.SimpleBuildStep;
 
 public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 
-	private final String apiUrl;
+	private final String apiKey;
+	private final String prjctKey;
+	
+	private String url = "https://app.testwheel.com/test-appln";
 	
 	static final String STATUS = "status";
 
 	@DataBoundConstructor
-	public TestWheelTrigger(String apiUrl) {
-		this.apiUrl = apiUrl;
+	public TestWheelTrigger(String apiKey, String prjctKey) {
+		this.apiKey = apiKey;
+		this.prjctKey = prjctKey;
 	}
 
-	public String getApiUrl() {
-		return apiUrl;
+	public String getApiKey() {
+		return apiKey;
+	}
+	
+	public String getPrjctKey() {
+		return prjctKey;
 	}
 
 	@SuppressWarnings("deprecation")
@@ -48,8 +56,8 @@ public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 	@Override
 	public void perform(Run<?, ?> run, FilePath workspace, EnvVars env, Launcher launcher, TaskListener listener) {
 		try (CloseableHttpClient client = HttpClients.createDefault()) {
-			listener.getLogger().println("Calling API: " + apiUrl);
-			HttpUriRequestBase request = new HttpGet(apiUrl);
+			url = url + "?apiKey=" + apiKey + "&prjctKey=" + prjctKey;
+			HttpUriRequestBase request = new HttpGet(url);
 			try (CloseableHttpResponse response = client.execute(request)) {
 				if (response.getCode() == 201) {
 					String responseBody = EntityUtils.toString(response.getEntity());
@@ -57,8 +65,7 @@ public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 					if ("success".equalsIgnoreCase(jsonResponse.getString(STATUS))) {
 						String runId = jsonResponse.getString("output");
 						if (runId != null && !runId.isEmpty()) {
-							String secondUrl = apiUrl + "&runId=" + runId;
-							listener.getLogger().println("Polling API: " + secondUrl);
+							String secondUrl = url + "&runId=" + runId;
 							while (true) {
 								HttpUriRequestBase secondRequest = new HttpGet(secondUrl);
 								try (CloseableHttpResponse secondResponse = client.execute(secondRequest)) {
