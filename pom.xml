@@ -14,7 +14,7 @@
 	<packaging>hpi</packaging>
 	<name>TestWheel Automation Plugin</name>
 	<properties>
-		<revision>1.0.1</revision>
+		<revision>1.0</revision>
 		<maven.test.skip>true</maven.test.skip>
 		<jenkins.version>2.452.4</jenkins.version>
 	</properties>
