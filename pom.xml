@@ -14,7 +14,7 @@
 	<packaging>hpi</packaging>
 	<name>TestWheel Automation Plugin</name>
 	<properties>
-		<revision>1.0</revision>
+		<revision>1.0.1</revision>
 		<maven.test.skip>true</maven.test.skip>
 		<jenkins.version>2.452.4</jenkins.version>
 	</properties>
@@ -42,6 +42,11 @@
 				<version>3761.vd922730f0fd2</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jenkins-ci.plugins</groupId>
+				<artifactId>workflow-step-api</artifactId>
+				<scope>provided</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
