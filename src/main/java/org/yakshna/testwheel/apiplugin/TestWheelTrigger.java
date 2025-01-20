@@ -28,24 +28,25 @@ import hudson.model.Run;
 import hudson.model.TaskListener;
 import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Builder;
+import hudson.util.Secret;
 import jenkins.tasks.SimpleBuildStep;
 
 public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 
-	private final String apiKey;
+	private final Secret apiKey;
 	private final String prjctKey;
 
-	private String url = "https://app.testwheel.com/test-appln";
+	private static String url = "https://app.testwheel.com/test-appln";
 
-	static final String STATUS = "status";
+	private static final String STATUS = "status";
 
 	@DataBoundConstructor
-	public TestWheelTrigger(String apiKey, String prjctKey) {
+	public TestWheelTrigger(Secret apiKey, String prjctKey) {
 		this.apiKey = apiKey;
 		this.prjctKey = prjctKey;
 	}
 
-	public String getApiKey() {
+	public Secret getApiKey() {
 		return apiKey;
 	}
 
@@ -58,7 +59,8 @@ public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 	public void perform(Run<?, ?> run, FilePath workspace, EnvVars env, Launcher launcher, TaskListener listener) {
 		try (CloseableHttpClient client = HttpClients.createDefault()) {
 			JSONObject requestBody = new JSONObject();
-			requestBody.put("apiKey", apiKey);
+			String decryptedApiKey = apiKey.getPlainText();
+			requestBody.put("apiKey", decryptedApiKey);
 			requestBody.put("prjctKey", prjctKey);
 			HttpPost request = new HttpPost(url); // Change to POST
 			request.setHeader("Content-Type", "application/json");

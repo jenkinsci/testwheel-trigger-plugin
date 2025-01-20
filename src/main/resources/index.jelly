@@ -5,15 +5,17 @@
     </p>
     <h2>Getting Started</h2>
     <p>
-        Install the plugin from the Jenkins Marketplace, configure it within your pipeline, and link it to your TestWheel account. Simply provide your Test Automation URL to execute automated tests in real-time.
+        Install the plugin from the Jenkins Marketplace, configure it within your pipeline, and link it to your TestWheel account. Obtain your secure <code>apiKey</code> and <code>prjctKey</code> from the TestWheel Web Portal and configure them in the plugin settings. Use these keys to securely trigger automated tests in real-time.
     </p>
     <h2>Features</h2>
     <ul>
         <li>Automates TestWheel framework tests within CI/CD pipelines.</li>
-        <li>Triggers post-deployment tests based on API URLs for seamless integration.</li>
-        <li>Provides feedback on test status and halts the pipeline if critical issues are detected.</li>
+        <li>Securely triggers post-deployment tests using <code>apiKey</code> and <code>prjctKey</code> obtained from the TestWheel Web Portal.</li>
+        <li>Provides real-time feedback on test status and halts the pipeline if critical issues are detected.</li>
+        <li>Ensures secure integration with TestWheel using application-specific keys for authentication.</li>
     </ul>
+    <h2>Support and Feedback</h2>
     <p>
-        Contribute your feedback or get support by reaching out to our team through the "Contact Us" link in TestWheel.
+        For support, feedback, or troubleshooting, reach out to our team via the "Contact Us" link on the TestWheel Web Portal. Your input is invaluable in helping us improve!
     </p>
 </div>
