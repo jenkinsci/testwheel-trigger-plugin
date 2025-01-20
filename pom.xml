@@ -13,9 +13,9 @@
 	<version>${revision}</version>
 	<packaging>hpi</packaging>
 	<name>TestWheel Automation Plugin</name>
+	<url>https://github.com/jenkinsci/testwheel-trigger-plugin</url>
 	<properties>
 		<revision>1.0</revision>
-		<maven.test.skip>true</maven.test.skip>
 		<jenkins.version>2.452.4</jenkins.version>
 	</properties>
 	<licenses>
@@ -28,12 +28,15 @@
 	</licenses>
 	<scm>
 		<connection>
-			scm:git:https://github.com/Yakshna-Corporation/testwheel-trigger.git</connection>
+			scm:git:https://github.com/jenkinsci/testwheel-trigger-plugin.git
+		</connection>
 		<developerConnection>
-			scm:git:https://github.com/Yakshna-Corporation/testwheel-trigger.git</developerConnection>
-		<url>https://github.com/Yakshna-Corporation/testwheel-trigger</url>
+			scm:git:https://github.com/jenkinsci/testwheel-trigger-plugin.git
+		</developerConnection>
+		<url>https://github.com/jenkinsci/testwheel-trigger-plugin</url>
 		<tag>HEAD</tag>
 	</scm>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
