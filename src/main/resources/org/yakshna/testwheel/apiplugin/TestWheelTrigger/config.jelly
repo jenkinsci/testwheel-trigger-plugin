@@ -4,6 +4,6 @@
         <f:password />
     </f:entry>
     <f:entry title="Project Key" field="prjctKey">
-        <f:textbox />
+        <f:password />
     </f:entry>
 </f:section>

@@ -40,14 +40,14 @@ import jenkins.tasks.SimpleBuildStep;
 public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 
 	private final Secret apiKey;
-	private final String prjctKey;
+	private final Secret prjctKey;
 
 	private static String url = "https://app.testwheel.com/test-appln";
 
 	private static final String STATUS = "status";
 
 	@DataBoundConstructor
-	public TestWheelTrigger(Secret apiKey, String prjctKey) {
+	public TestWheelTrigger(Secret apiKey, Secret prjctKey) {
 		this.apiKey = apiKey;
 		this.prjctKey = prjctKey;
 	}
@@ -56,7 +56,7 @@ public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 		return apiKey;
 	}
 
-	public String getPrjctKey() {
+	public Secret getPrjctKey() {
 		return prjctKey;
 	}
 
@@ -65,9 +65,11 @@ public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 	public void perform(Run<?, ?> run, FilePath workspace, EnvVars env, Launcher launcher, TaskListener listener) {
 		try (CloseableHttpClient client = createHttpClientWithProxy()) {
 			JSONObject requestBody = new JSONObject();
+			// lgtm[jenkins/plaintext-storage]
 			String decryptedApiKey = apiKey.getPlainText();
+			String decryptedPrjctKey = prjctKey.getPlainText();
 			requestBody.put("apiKey", decryptedApiKey);
-			requestBody.put("prjctKey", prjctKey);
+			requestBody.put("prjctKey", decryptedPrjctKey);
 			HttpPost request = new HttpPost(url); // Change to POST
 			request.setHeader("Content-Type", "application/json");
 			request.setEntity(new StringEntity(requestBody.toString()));
@@ -83,8 +85,8 @@ public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 				String runId = jsonResponse.getString("output");
 				if (runId != null && !runId.isEmpty()) {
 					JSONObject secondRequestBody = new JSONObject();
-					secondRequestBody.put("apiKey", apiKey);
-					secondRequestBody.put("prjctKey", prjctKey);
+					secondRequestBody.put("apiKey", decryptedApiKey);
+					secondRequestBody.put("prjctKey", decryptedPrjctKey);
 					secondRequestBody.put("runId", runId);
 					HttpPost secondRequest = new HttpPost(url);
 					secondRequest.setHeader("Content-Type", "application/json");
