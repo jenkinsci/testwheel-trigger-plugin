@@ -1,0 +1,9 @@
+<?jelly escape-by-default='true'?>
+<f:section title="TestWheel Plugin Configuration">
+    <f:entry title="API Key" field="apiKey">
+        <f:password />
+    </f:entry>
+    <f:entry title="Project Key" field="prjctKey">
+        <f:textbox />
+    </f:entry>
+</f:section>
