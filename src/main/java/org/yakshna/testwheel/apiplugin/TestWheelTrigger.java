@@ -4,12 +4,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import org.apache.hc.client5.http.auth.AuthScope;
+import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.core5.http.ClassicHttpResponse;
 import org.apache.hc.core5.http.HttpException;
+import org.apache.hc.core5.http.HttpHost;
 import org.apache.hc.core5.http.io.HttpClientResponseHandler;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.apache.hc.core5.http.io.entity.StringEntity;
@@ -22,6 +26,7 @@ import hudson.EnvVars;
 import hudson.Extension;
 import hudson.FilePath;
 import hudson.Launcher;
+import hudson.ProxyConfiguration;
 import hudson.model.AbstractProject;
 import hudson.model.Result;
 import hudson.model.Run;
@@ -29,6 +34,7 @@ import hudson.model.TaskListener;
 import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Builder;
 import hudson.util.Secret;
+import jenkins.model.Jenkins;
 import jenkins.tasks.SimpleBuildStep;
 
 public class TestWheelTrigger extends Builder implements SimpleBuildStep {
@@ -57,7 +63,7 @@ public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 	@SuppressFBWarnings("REC_CATCH_EXCEPTION")
 	@Override
 	public void perform(Run<?, ?> run, FilePath workspace, EnvVars env, Launcher launcher, TaskListener listener) {
-		try (CloseableHttpClient client = HttpClients.createDefault()) {
+		try (CloseableHttpClient client = createHttpClientWithProxy()) {
 			JSONObject requestBody = new JSONObject();
 			String decryptedApiKey = apiKey.getPlainText();
 			requestBody.put("apiKey", decryptedApiKey);
@@ -149,5 +155,27 @@ public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 		public String getDisplayName() {
 			return "TestwheelTrigger";
 		}
+	}
+	
+	private CloseableHttpClient createHttpClientWithProxy() {
+	    Jenkins jenkins = Jenkins.get();
+	    ProxyConfiguration proxyConfig = jenkins.proxy;
+
+	    if (proxyConfig != null) {
+	    	HttpHost proxy = new HttpHost(proxyConfig.name, proxyConfig.port);
+
+	    	BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+	        if (proxyConfig.getUserName() != null && proxyConfig.getSecretPassword() != null) {
+	            String decryptedPassword = Secret.toString(proxyConfig.getSecretPassword());
+	            UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(
+	                    proxyConfig.getUserName(), decryptedPassword.toCharArray());
+	            credentialsProvider.setCredentials(new AuthScope(proxyConfig.name, proxyConfig.port), credentials);
+	        }
+	        return HttpClients.custom()
+	                .setProxy(proxy)
+	                .setDefaultCredentialsProvider(credentialsProvider)
+	                .build();
+	    }
+	    return HttpClients.createDefault();
 	}
 }
