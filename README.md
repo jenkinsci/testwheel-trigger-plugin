@@ -13,8 +13,8 @@ To get started with the TestWheel Automation Plugin, simply install the plugin f
 To effectively utilize the TestWheel Automation Plugin, please ensure you have the following:
 
 - An existing Jenkins CI Server.
-- A required TestWheel account for a seamless automation process. [Register](https://www.testwheel.com/registration) or [Login](https://www.testwheel.com/login) with TestWheel using the mentioned link.
-- Ensure you have registered your application in TestWheel and obtained the Test Automation URL for the application to perform post-deployment test automation using the Plugin.
+- A required TestWheel account for a seamless automation process. [Register](https://app.testwheel.com/registration) or [Login](https://app.testwheel.com/login) with TestWheel using the mentioned link.
+- Ensure you have registered your application in TestWheel and obtained the Secure ApiKey & PrjctKey for the application to perform post-deployment test automation using the Plugin.
 
 ## Installation and Setup
 
@@ -23,12 +23,12 @@ To effectively utilize the TestWheel Automation Plugin, please ensure you have t
 3. On the Plugin Manager page, click **Available Plugins**.
 4. Search for **TestWheel Automation Plugin** and install it.
 5. After successful installation, ensure you have logged in with TestWheel Automation.
-6. Create a new task in your CI/CD pipeline and add the Application API Management URL to trigger the test.
+6. Create a new task in your CI/CD pipeline and provide the Application's ApiKey & PrjctKey obtained from the web portal to trigger the test.
 
 ## Build and Test
 
-To execute tests in your CI/CD pipeline post-deployment stage, integrate the API application URL into your DevOps tool. This integration will trigger the tests and generate a report. If the application passes the tests, the pipeline will proceed to the next stage. Conversely, if the application fails, the pipeline will terminate at that point.
+To execute tests in your CI/CD pipeline post-deployment stage, integrate the Application ApiKey & PrjctKey into your DevOps tool. This integration will trigger the tests and generate a report. If the application passes the tests, the pipeline will proceed to the next stage. Conversely, if the application fails, the pipeline will terminate at that point.
 
 ## Contribute
 
-TestWheel accepts feedback, whether positive or negative. Users can submit their concerns through the [Contact Us](https://www.testwheel.com/contact-us) link.
+TestWheel accepts feedback, whether positive or negative. Users can submit their concerns through the [Contact Us](https://app.testwheel.com/contact-us) link.
