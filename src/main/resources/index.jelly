@@ -1,11 +1,4 @@
 <?jelly escape-by-default='true'?>
 <div>
-    <h1>TestWheel Automation Plugin</h1>
-    <p>
-        Automate TestWheel framework tests in CI/CD pipelines with seamless integration and continuous validation.
-    </p>
-    <h2>Support and Feedback</h2>
-    <p>
-        For support, feedback, or troubleshooting, reach out to our team via the "Contact Us" link on the TestWheel Web Portal (https://app.testwheel.com/contact-us). Your input is invaluable in helping us improve!
-    </p>
+   Automate TestWheel framework tests in CI/CD pipelines with seamless integration and continuous validation.
 </div>
