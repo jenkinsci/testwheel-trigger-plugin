@@ -16,7 +16,9 @@
 	<url>https://github.com/jenkinsci/testwheel-trigger-plugin</url>
 	<properties>
 		<revision>1.0</revision>
-		<jenkins.version>2.452.4</jenkins.version>
+		<!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
+		<jenkins.baseline>2.452</jenkins.baseline>
+		<jenkins.version>${jenkins.baseline}.4</jenkins.version>
 	</properties>
 	<licenses>
 		<license>
@@ -41,7 +43,7 @@
 		<dependencies>
 			<dependency>
 				<groupId>io.jenkins.tools.bom</groupId>
-				<artifactId>bom-2.452.x</artifactId>
+				<artifactId>bom-${jenkins.baseline}.x</artifactId>
 				<version>3761.vd922730f0fd2</version>
 				<type>pom</type>
 				<scope>import</scope>
