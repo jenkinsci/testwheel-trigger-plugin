@@ -15,7 +15,7 @@
 	<name>TestWheel Automation Plugin</name>
 	<url>https://github.com/jenkinsci/testwheel-trigger-plugin</url>
 	<description>
-  		This plugin triggers TestWheel automation jobs from Jenkins.
+  		This plugin triggers TestWheel Automation jobs from Jenkins.
 	</description>
 	<properties>
 		<revision>1.0</revision>
@@ -37,7 +37,7 @@
 			scm:git:https://github.com/jenkinsci/testwheel-trigger-plugin.git
 		</developerConnection>
 		<url>https://github.com/jenkinsci/testwheel-trigger-plugin</url>
-		<tag>v1.0.0</tag>
+		<tag>v1.0</tag>
 	</scm>
 	<developers>
   		<developer>
