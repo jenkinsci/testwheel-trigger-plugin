@@ -14,6 +14,9 @@
 	<packaging>hpi</packaging>
 	<name>TestWheel Automation Plugin</name>
 	<url>https://github.com/jenkinsci/testwheel-trigger-plugin</url>
+	<description>
+  		This plugin triggers TestWheel automation jobs from Jenkins.
+	</description>
 	<properties>
 		<revision>1.0</revision>
 		<jenkins.version>2.452.4</jenkins.version>
@@ -34,9 +37,15 @@
 			scm:git:https://github.com/jenkinsci/testwheel-trigger-plugin.git
 		</developerConnection>
 		<url>https://github.com/jenkinsci/testwheel-trigger-plugin</url>
-		<tag>HEAD</tag>
+		<tag>v1.0.0</tag>
 	</scm>
-
+	<developers>
+  		<developer>
+    		<id>prakashp1987</id>
+    		<name>Prakash Ponnusamy</name>
+    		<email>prakashp@yakshnatechnologies.in</email>
+  		</developer>
+	</developers>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
