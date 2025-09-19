@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>5.24</version>
+		<version>5.26</version>
 		<relativePath />
 	</parent>
 	<groupId>io.jenkins.plugins</groupId>
 	<artifactId>
 		testwheel-trigger</artifactId>
-	<version>${revision}${changelist}</version>
+	<version>${revision}.${changelist}</version>
 	<packaging>hpi</packaging>
 	<name>TestWheel Automation Plugin</name>
 	<url>
@@ -20,8 +20,8 @@
 		This plugin triggers TestWheel Automation jobs from Jenkins.
 	</description>
 	<properties>
-		<revision>1.0</revision>
-		<changelist>-SNAPSHOT</changelist>
+		<revision>1</revision>
+		<changelist>999999-SNAPSHOT</changelist>
 		<jenkins.version>2.516.3</jenkins.version>
 	</properties>
 	<licenses>
@@ -52,7 +52,7 @@
 			<dependency>
 				<groupId>io.jenkins.tools.bom</groupId>
 				<artifactId>bom-2.516.x</artifactId>
-				<version>5085.v05cc65a_936d3</version>
+				<version>5388.v3ea_2e00a_719a_</version>
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
