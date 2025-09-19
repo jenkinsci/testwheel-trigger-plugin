@@ -21,7 +21,6 @@ import org.jenkinsci.Symbol;
 import org.json.JSONObject;
 import org.kohsuke.stapler.DataBoundConstructor;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import hudson.EnvVars;
 import hudson.Extension;
 import hudson.FilePath;
@@ -60,7 +59,6 @@ public class TestWheelTrigger extends Builder implements SimpleBuildStep {
 		return prjctKey;
 	}
 
-	@SuppressFBWarnings("REC_CATCH_EXCEPTION")
 	@Override
 	public void perform(Run<?, ?> run, FilePath workspace, EnvVars env, Launcher launcher, TaskListener listener) {
 		try (CloseableHttpClient client = createHttpClientWithProxy()) {
