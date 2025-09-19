@@ -41,8 +41,7 @@ jobs:
       #   - Perform a validation only run with drafting a release note,
       #     if manually triggered AND inputs.validate_only has been checked.
       #
-      validate_only: ${{ inputs.validate_only == true }}
-      skip_publish: true
+      validate_only: ${{ inputs.validate_only == false }}
       #
       # Alternative use case #2 (no automatic release):
       #   - Same as use case #1 - but:
