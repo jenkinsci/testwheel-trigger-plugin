@@ -5,21 +5,24 @@
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>4.85</version>
+		<version>5.24</version>
 		<relativePath />
 	</parent>
 	<groupId>io.jenkins.plugins</groupId>
-	<artifactId>testwheel-trigger</artifactId>
-	<version>${revision}</version>
+	<artifactId>
+		testwheel-trigger</artifactId>
+	<version>${revision}${changelist}</version>
 	<packaging>hpi</packaging>
 	<name>TestWheel Automation Plugin</name>
-	<url>https://github.com/jenkinsci/testwheel-trigger-plugin</url>
+	<url>
+		https://github.com/jenkinsci/testwheel-trigger-plugin</url>
 	<description>
-  		This plugin triggers TestWheel Automation jobs from Jenkins.
+		This plugin triggers TestWheel Automation jobs from Jenkins.
 	</description>
 	<properties>
 		<revision>1.0</revision>
-		<jenkins.version>2.452.4</jenkins.version>
+		<changelist>-SNAPSHOT</changelist>
+		<jenkins.version>2.516.3</jenkins.version>
 	</properties>
 	<licenses>
 		<license>
@@ -31,29 +34,27 @@
 	</licenses>
 	<scm>
 		<connection>
-			scm:git:https://github.com/jenkinsci/testwheel-trigger-plugin.git
-		</connection>
+			scm:git:https://github.com/jenkinsci/testwheel-trigger-plugin.git</connection>
 		<developerConnection>
-			scm:git:https://github.com/jenkinsci/testwheel-trigger-plugin.git
-		</developerConnection>
+			scm:git:git@github.com:jenkinsci/testwheel-trigger-plugin.git</developerConnection>
 		<url>https://github.com/jenkinsci/testwheel-trigger-plugin</url>
-		<tag>v1.0</tag>
+		<tag>${scmTag}</tag>
 	</scm>
 	<developers>
-  		<developer>
-    		<id>prakashp1987</id>
-    		<name>Prakash Ponnusamy</name>
-    		<email>prakashp@yakshnatechnologies.in</email>
-  		</developer>
+		<developer>
+			<id>prakashp1987</id>
+			<name>Prakash Ponnusamy</name>
+			<email>prakashp@yakshnatechnologies.in</email>
+		</developer>
 	</developers>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>io.jenkins.tools.bom</groupId>
-				<artifactId>bom-2.452.x</artifactId>
-				<version>3761.vd922730f0fd2</version>
-				<type>pom</type>
+				<artifactId>bom-2.516.x</artifactId>
+				<version>5085.v05cc65a_936d3</version>
 				<scope>import</scope>
+				<type>pom</type>
 			</dependency>
 			<dependency>
 				<groupId>org.jenkins-ci.plugins</groupId>
@@ -71,15 +72,17 @@
 			<groupId>io.jenkins.plugins</groupId>
 			<artifactId>json-api</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>6.1.0</version><!--$NO-MVN-MAN-VER$-->
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<repositories>
 		<repository>
 			<id>repo.jenkins-ci.org</id>
 			<url>https://repo.jenkins-ci.org/public/</url>
-		</repository>
-		<repository>
-			<id>jenkins-releases</id>
-			<url>https://repo.jenkins-ci.org/releases/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
