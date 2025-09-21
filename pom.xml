@@ -11,7 +11,7 @@
 	<groupId>io.jenkins.plugins</groupId>
 	<artifactId>
 		testwheel-trigger</artifactId>
-	<version>${revision}.${changelist}</version>
+	<version>${changelist}</version>
 	<packaging>hpi</packaging>
 	<name>TestWheel Automation Plugin</name>
 	<url>
@@ -20,7 +20,6 @@
 		This plugin triggers TestWheel Automation jobs from Jenkins.
 	</description>
 	<properties>
-		<revision>1</revision>
 		<changelist>999999-SNAPSHOT</changelist>
 		<jenkins.version>2.516.3</jenkins.version>
 	</properties>
