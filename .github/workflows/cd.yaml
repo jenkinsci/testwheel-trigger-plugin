@@ -32,7 +32,7 @@ permissions:
 jobs:
   maven-cd:
     uses: jenkins-infra/github-reusable-workflows/.github/workflows/maven-cd.yml@v1
-    with:
+    #with:
       # Comment / uncomment the validate_only config appropriate to your preference:
       #
       # Use case #1 (automatic release):
@@ -41,7 +41,7 @@ jobs:
       #   - Perform a validation only run with drafting a release note,
       #     if manually triggered AND inputs.validate_only has been checked.
       #
-      validate_only: ${{ inputs.validate_only == false }}
+      #validate_only: ${{ inputs.validate_only == false }}
       #
       # Alternative use case #2 (no automatic release):
       #   - Same as use case #1 - but:
